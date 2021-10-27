@@ -43,7 +43,7 @@ namespace dotnetwebapi
         {
             //Accept All HTTP Request Methods from all origins
 app.UseCors(builder =>
-builder.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod())
+builder.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
