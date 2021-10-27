@@ -41,6 +41,9 @@ namespace dotnetwebapi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //Accept All HTTP Request Methods from all origins
+app.UseCors(builder =>
+builder.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod())
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
