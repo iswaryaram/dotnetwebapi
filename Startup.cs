@@ -30,12 +30,12 @@ namespace dotnetwebapi
         {
 
             services.AddControllers();
-             services.AddDbContext<FruitContext>(opt =>
-                                               opt.UseInMemoryDatabase("FruitList"));
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotnetwebapi", Version = "v1" });
-            });
+            services.AddOpenApiDocument();
+             //services.AddDbContext<FruitContext>(opt => opt.UseInMemoryDatabase("FruitList"));
+            //services.AddSwaggerGen(c =>
+            //{
+                //c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotnetwebapi", Version = "v1" });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +58,8 @@ namespace dotnetwebapi
             {
                 endpoints.MapControllers();
             });
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }
