@@ -31,7 +31,7 @@ namespace dotnetwebapi
 
             services.AddControllers();
             services.AddOpenApiDocument();
-             //services.AddDbContext<FruitContext>(opt => opt.UseInMemoryDatabase("FruitList"));
+             services.AddDbContext<FruitContext>(opt => opt.UseInMemoryDatabase("FruitList"));
             //services.AddSwaggerGen(c =>
             //{
                 //c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotnetwebapi", Version = "v1" });
